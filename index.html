@@ -15,10 +15,8 @@
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
         crossorigin="anonymous"></script>
-
-
-
-
+    <!-- Fire base hook-->
+    <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-app.js"></script>
     <!-- ading the link to Momentjs, for the good ole math help-->
     <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
 
@@ -35,11 +33,6 @@
 
         </div>
     </div>
-
-
-
-
-
 
     <!-- Add a table here to display the trans that you add with times -->
     <div class="container rounded border border-danger">
@@ -62,25 +55,25 @@
     </div>
     <!-- and some form boxes that will will allow you to add the content to the firebase, and allow you pull the data and dispaly above -->
     <div class="container rounded border border-danger mx-auto m-3 p-3">
-    <form action="/action_page.php">
-        <div class="form-group">
-          <label for="">Train Name</label>
-          <input type="text" class="form-control" placeholder="Enter the Train's Name">
-        </div>
-        <div class="form-group">
-          <label for="">Destination</label>
-          <input type="text" class="form-control" placeholder="Enter you Destination">
-        </div>
-        <div class="form-group">
-            <label for="">First Train Time (HH:mm - Military Time)</label>
-            <input type="text" class="form-control" placeholder="Enter the Train's time">
-          </div>
-          <div class="form-group">
-            <label for="">Frequency (min)</label>
-            <input type="text" class="form-control" placeholder="Enter Frequency">
-          </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-      </form>
+        <form action="/action_page.php">
+            <div class="form-group">
+                <label for="">Train Name</label>
+                <input type="text" class="form-control" placeholder="Enter the Train's Name" id="trainName">
+            </div>
+            <div class="form-group">
+                <label for="">Destination</label>
+                <input type="text" class="form-control" placeholder="Enter you Destination" id="destInfo">
+            </div>
+            <div class="form-group">
+                <label for="">First Train Time (HH:mm - Military Time)</label>
+                <input type="text" class="form-control" placeholder="Enter the Train's time" id="firstTime">
+            </div>
+            <div class="form-group">
+                <label for="">Frequency (min)</label>
+                <input type="text" class="form-control" placeholder="Enter Frequency" id="frequencyInfo">
+            </div>
+            <button type="submit" class="btn btn-primary" id="button1">Submit</button>
+        </form>
 
     </div>
 
