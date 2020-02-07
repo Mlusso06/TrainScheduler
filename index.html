@@ -19,30 +19,74 @@
 
 
 
-        <!-- ading the link to Momentjs, for the good ole math help-->
-        <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+    <!-- ading the link to Momentjs, for the good ole math help-->
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
 
 </head>
 
 <body>
+    <!-- Need a big display here that will use a jumbotron get creative, using bootstrap-->
+    <div class="container mx-auto">
+        <div class="jumbotron bg-info">
+            <h1 class="display-4 text-center">Nashville Express Train Depot</h1>
+            <p class="lead text-center">This is the Last Train to Clarksville</p>
+            <hr class="my-4">
+            <p class="text-center">All aboard</p>
+
+        </div>
+    </div>
 
 
 
-    <script>
-        // Your web app's Firebase configuration
-        var firebaseConfig = {
-          apiKey: "AIzaSyBvsAJHI7I8JojrFAyRkvFZcaKKKHU5Ab0",
-          authDomain: "trainscheduler-ae4cf.firebaseapp.com",
-          databaseURL: "https://trainscheduler-ae4cf.firebaseio.com",
-          projectId: "trainscheduler-ae4cf",
-          storageBucket: "trainscheduler-ae4cf.appspot.com",
-          messagingSenderId: "278830555255",
-          appId: "1:278830555255:web:1f8b54db2bb47efaade672"
-        };
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
-      </script>
-      <script src="./assets/trainapp.js"></script>
+
+
+
+    <!-- Add a table here to display the trans that you add with times -->
+    <div class="container rounded border border-danger">
+        <h2>Current Train Schedule</h2>
+        <p></p>
+        <table class="table table-striped table-hover table-dark">
+            <thead>
+                <tr>
+                    <th>Train Name</th>
+                    <th>Destination</th>
+                    <th>Frequency (Min)</th>
+                    <th>Next Arrival</th>
+                    <th>Minutes Away</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+    <!-- and some form boxes that will will allow you to add the content to the firebase, and allow you pull the data and dispaly above -->
+    <div class="container rounded border border-danger mx-auto m-3 p-3">
+    <form action="/action_page.php">
+        <div class="form-group">
+          <label for="">Train Name</label>
+          <input type="text" class="form-control" placeholder="Enter the Train's Name">
+        </div>
+        <div class="form-group">
+          <label for="">Destination</label>
+          <input type="text" class="form-control" placeholder="Enter you Destination">
+        </div>
+        <div class="form-group">
+            <label for="">First Train Time (HH:mm - Military Time)</label>
+            <input type="text" class="form-control" placeholder="Enter the Train's time">
+          </div>
+          <div class="form-group">
+            <label for="">Frequency (min)</label>
+            <input type="text" class="form-control" placeholder="Enter Frequency">
+          </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+
+    </div>
+
+
+    <!-- Link my trainapp -->
+    <script src="./assets/trainapp.js"></script>
 </body>
 
 </html>
