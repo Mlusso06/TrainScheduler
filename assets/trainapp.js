@@ -67,9 +67,23 @@ database.ref().on("child_added", function (childSnapshot) {
     var destination = childSnapshot.val().destination;
     var firstTrainTime = childSnapshot.val().firstTrainTime;
     var frequency = childSnapshot.val().frequency;
-    var remainingTm = moment().diff(moment.unix(firstTrainTime), "minutes") % frequency;
+    var remainingTm = moment().diff(moment.unix(firstTrainTime), "minutes")%frequency;
     var minutes = frequency - remainingTm;
     var arrTime = moment().add(minutes, "m").format("HH:mm");
+
+
+    var newRow = $("<tr>").append(
+        $("<td>").text(trainNm),
+        $("<td>").text(destination),
+        $("<td>").text(frequency),
+        $("<td>").text(arrTime),
+        $("<td>").text(minutes)
+      );
+    
+      // Append the new row to the table
+      $("#trainData > tbody").append(newRow);
+
+
 
 
 });
