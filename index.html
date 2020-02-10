@@ -7,22 +7,35 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Basic Train Scheduler</title>
     <!-- Let's start of the reset css so my content will be clean-->
-    <link rel="stylesheet" type="text/css" href="./assets/reset.css">
+    <!-- <link rel="stylesheet" type="text/css" href="./assets/reset.css"> -->
     <!-- This is my bootstrap cdn for all the cool stuff it can do -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> -->
     <!-- hooking my jQuery into the mix-->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    <!-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-        crossorigin="anonymous"></script>
+        crossorigin="anonymous"></script> -->
     <!-- Fire base hook-->
-    <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-app.js"></script>
+    <!-- <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script> -->
     <!-- ading the link to Momentjs, for the good ole math help-->
-    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/momexntjs/2.12.0/moment.min.js"></script> -->
+     <!-- jQuery -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+ <!-- Bootstrap -->
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+
+
+ <!-- Moment.js Reference -->
+ <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
 
 </head>
 
 <body>
+    <!-- Link my trainapp -->
     <!-- Need a big display here that will use a jumbotron get creative, using bootstrap-->
     <div class="container mx-auto">
         <div class="jumbotron bg-info">
@@ -30,10 +43,10 @@
             <p class="lead text-center">This is the Last Train to Clarksville</p>
             <hr class="my-4">
             <p class="text-center">All aboard</p>
-
+            
         </div>
     </div>
-
+    
     <!-- Add a table here to display the trans that you add with times -->
     <div class="container rounded border border-danger">
         <h2>Current Train Schedule</h2>
@@ -49,37 +62,39 @@
                 </tr>
             </thead>
             <tbody>
-
+                
             </tbody>
         </table>
     </div>
     <!-- and some form boxes that will will allow you to add the content to the firebase, and allow you pull the data and dispaly above -->
     <div class="container rounded border border-danger mx-auto m-3 p-3">
-        <form action="/action_page.php">
+        <form >
             <div class="form-group">
-                <label for="">Train Name</label>
-                <input type="text" class="form-control" placeholder="Enter the Train's Name" id="trainName">
+                <label for="train-name-input">Train Name</label>
+                <input type="text" class="form-control" placeholder="Enter the Train's Name" id="train-name-input">
             </div>
             <div class="form-group">
-                <label for="">Destination</label>
+                <label for="destInfo">Destination</label>
                 <input type="text" class="form-control" placeholder="Enter you Destination" id="destInfo">
             </div>
             <div class="form-group">
-                <label for="">First Train Time (HH:mm - Military Time)</label>
+                <label for="firstTime">First Train Time (HH:mm - Military Time)</label>
                 <input type="text" class="form-control" placeholder="Enter the Train's time" id="firstTime">
             </div>
             <div class="form-group">
-                <label for="">Frequency (min)</label>
+                <label for="frequencyInfo">Frequency (min)</label>
                 <input type="text" class="form-control" placeholder="Enter Frequency" id="frequencyInfo">
             </div>
             <button type="submit" class="btn btn-primary" id="button1">Submit</button>
         </form>
-
+        
     </div>
-
-
-    <!-- Link my trainapp -->
+    
+ <!-- Firebase References -->
+ <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-app.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-database.js"></script>
     <script src="./assets/trainapp.js"></script>
+    
 </body>
 
 </html>
